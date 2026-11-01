@@ -6,7 +6,7 @@ import Home from './pages/Home.jsx';
 import MyWork from './pages/MyWork.jsx';
 
 const PAGES = [
-  { path: '/', Component: Home, id: 92, home: true, styles: 'home', title: 'Mangai Machen John – Software Engineer' },
+  { path: '/', Component: Home, id: 92, home: true, styles: 'home', title: 'Mangai Machen John – Backend Engineer' },
   { path: '/about', Component: About, id: 59, styles: 'about', title: 'About – Mangai Machen John' },
   { path: '/contact', Component: Contact, id: 74, styles: 'contact', title: 'Contact – Mangai Machen John' },
   { path: '/my-work', Component: MyWork, id: 78, styles: 'my-work', title: 'My Work – Mangai Machen John' },

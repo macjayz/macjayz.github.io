@@ -1,7 +1,7 @@
 // Personal details and projects shown across the site (from the CV).
 export const profile = {
   name: 'Mangai Machen John',
-  role: 'Software Engineer',
+  role: 'Backend Engineer',
   location: 'Abuja, Nigeria',
   email: 'macjayz90s@gmail.com',
   phone: '+234 903 738 3530',
@@ -10,19 +10,27 @@ export const profile = {
 };
 
 export const projectCategories = [
-  { id: 'products', anchor: 'brown', label: 'Products' },
-  { id: 'backend', anchor: 'dark', label: 'Backend' },
-  { id: 'web3', anchor: 'vintage', label: 'Web3 & Data' },
+  { id: 'web3', anchor: 'brown', label: 'Infrastructure' },
+  { id: 'products', anchor: 'dark', label: 'Products' },
+  { id: 'backend', anchor: 'vintage', label: 'Backend' },
 ];
 
 export const projects = [
+  {
+    category: 'web3',
+    title: 'Heightproof',
+    image: '/assets/images/projects/heightproof.jpg',
+    link: { label: 'GitHub ↗', href: 'https://github.com/macjayz/heightproof' },
+    description:
+      'Self-hosted observability for EVM JSON-RPC traffic that catches the failures hiding behind 200 OK: stale chain heads, cross-provider disagreement at the same block height, silent nulls and reorg lag. Its reliability study of 13 public endpoints found that Arbitrum One\'s official RPC dates every eth_getLogs result 1 January 1970 (OffchainLabs/nitro#4780). TypeScript · Fastify · Redis Streams · PostgreSQL · Kubernetes',
+  },
   {
     category: 'products',
     title: 'InkKrystal',
     image: '/assets/images/projects/inkkrystal.jpg',
     link: { label: 'Visit ↗', href: 'https://inkkrystal.com' },
     description:
-      'Production website and iOS/Android reading app for a fiction publisher: book discovery, reading, author onboarding and manuscript submission, plus writer, editor and admin workflows for contracts, royalties and subscriptions. React · TypeScript · Supabase · Sanity · Capacitor',
+      'Production website and iOS/Android reading app for a fiction publisher, with 10,000+ users: book discovery, reading, author onboarding and manuscript submission, plus writer, editor and admin workflows for contracts, royalties and subscriptions. React · TypeScript · Supabase · Sanity · Capacitor',
   },
   {
     category: 'products',
@@ -38,7 +46,7 @@ export const projects = [
     image: '/assets/images/projects/badge-verification.jpg',
     link: { label: 'GitHub ↗', href: 'https://github.com/macjayz/badge-verification' },
     description:
-      'Credentialing system for communities and DAOs with rule-based badge eligibility, Twitter/Discord OAuth, SIWE authentication, Polygon ID/idOS adapters, Snapshot vote checks and WebSocket-powered dashboards. Node.js · TypeScript · PostgreSQL · Redis · Docker',
+      'Credentialing system for communities and DAOs with rule-based badge eligibility, SIWE sign-in, Privado ID zero-knowledge identity proofs, X and Discord OAuth, Snapshot vote checks, on-chain soulbound badges and WebSocket-powered dashboards. Node.js · TypeScript · PostgreSQL · Redis · Docker',
   },
   {
     category: 'web3',
@@ -47,13 +55,5 @@ export const projects = [
     link: { label: 'GitHub ↗', href: 'https://github.com/macjayz/xeinon' },
     description:
       'Real-time Base token discovery platform that detects, indexes, classifies and tracks new tokens from creation through market activity, enriched with pricing and liquidity data. React · TypeScript · Supabase · viem · WebSockets',
-  },
-  {
-    category: 'web3',
-    title: 'Heightproof',
-    image: '/assets/images/projects/heightproof.jpg',
-    link: { label: 'GitHub ↗', href: 'https://github.com/macjayz/heightproof' },
-    description:
-      'Self-hosted observability for EVM JSON-RPC traffic that catches the failures hiding behind 200 OK: stale chain heads, cross-provider disagreement at the same block height, silent nulls, reorg lag, throttling and wasted compute. TypeScript · viem · Redis Streams · PostgreSQL · Docker',
   },
 ];

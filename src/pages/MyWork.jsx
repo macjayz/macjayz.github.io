@@ -74,7 +74,7 @@ export default function MyWork() {
                       </div>
                     </div>
                   </div>
-                  {projects.filter((project) => project.category === 'products').map((project) => (
+                  {projects.filter((project) => project.category === projectCategories[0].id).map((project) => (
                     <ProjectCard key={project.title} project={project} />
                   ))}
                 </div>
@@ -96,7 +96,7 @@ export default function MyWork() {
                       </div>
                     </div>
                   </div>
-                  {projects.filter((project) => project.category === 'backend').map((project) => (
+                  {projects.filter((project) => project.category === projectCategories[1].id).map((project) => (
                     <ProjectCard key={project.title} project={project} />
                   ))}
                 </div>
@@ -118,7 +118,7 @@ export default function MyWork() {
                       </div>
                     </div>
                   </div>
-                  {projects.filter((project) => project.category === 'web3').map((project) => (
+                  {projects.filter((project) => project.category === projectCategories[2].id).map((project) => (
                     <ProjectCard key={project.title} project={project} />
                   ))}
                   <div className="elementor-element elementor-element-e136ba9 e-con-full e-flex e-con e-child" data-id="e136ba9" data-element_type="container" data-e-type="container">

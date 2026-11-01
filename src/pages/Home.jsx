@@ -15,9 +15,9 @@ export default function Home() {
               <BackgroundSlideshow images={["/assets/images/me/desk.jpg","/assets/images/me/portrait.jpg"]} slideDuration={5000} transitionDuration={500} kenBurns="in" />
               <BlurReveal className="elementor-element elementor-element-2d1ef39 blur-reveal elementor-widget elementor-widget-heading" data-id="2d1ef39" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
                 <h1 className="elementor-heading-title elementor-size-default">
-                  <RevealText text={"I'm a SOFTWARE "} offset={0} />
+                  <RevealText text={"I'm a BACKEND "} offset={0} />
                   <br />
-                  <RevealText text={"ENGINEER"} offset={12} />
+                  <RevealText text={"ENGINEER"} offset={14} />
                 </h1>
               </BlurReveal>
               <div className="elementor-element elementor-element-41a1174 e-con-full elementor-hidden-tablet elementor-hidden-mobile e-flex e-con e-child" data-id="41a1174" data-element_type="container" data-e-type="container">

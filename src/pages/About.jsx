@@ -26,7 +26,7 @@ export default function About() {
                     </div>
                     <div className="elementor-element elementor-element-5ae21097 elementor-widget elementor-widget-heading" data-id="5ae21097" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
                       <p className="elementor-heading-title elementor-size-default">
-                        I’m a senior software engineer building production web and mobile applications with TypeScript, Node.js, React and PostgreSQL. I own delivery from architecture and API design through deployment, monitoring and ongoing maintenance.
+                        I’m a backend engineer focused on PostgreSQL, payments and EVM infrastructure, building with TypeScript and Node.js. Most of my work comes down to making sure what looks right actually is: payment state from verified receipts only, authorization enforced in the database, and API answers that return 200 OK with the wrong data.
                       </p>
                     </div>
                   </div>
@@ -310,7 +310,7 @@ export default function About() {
                     </div>
                     <div className="elementor-element elementor-element-69d8cee elementor-widget elementor-widget-heading" data-id="69d8cee" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
                       <p className="elementor-heading-title elementor-size-default">
-                        I started in 2018 as a full-stack developer at Kin-Nuga National Business Listing, building directory and marketplace applications. From 2020 I handled backend development and deployments at Capridigital, and since 2022 I’ve worked as an independent consultant shipping production web, mobile and Web3 systems. I hold a B.Sc. in Computer Science from the University of Jos.
+                        I started in 2018 as a full-stack developer at Kin-Nuga National Business Listing, building directory and marketplace applications. From 2020 I handled backend development and deployments at Capridigital, and since 2022 I’ve worked as an independent consultant shipping production web, mobile and Web3 systems. From 2025 to 2026 I led the backend for InkKrystal, a reading platform that reached 10,000+ users, and I built Heightproof, an open-source tool that found a data bug on Arbitrum One’s official RPC. I hold a B.Sc. in Computer Science from the University of Jos.
                       </p>
                     </div>
                   </div>
