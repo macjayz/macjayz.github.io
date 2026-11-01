@@ -13,7 +13,12 @@ npm run build    # outputs dist/
 
 `.npmrc` sets `include=optional`, which Vite's native bundler needs.
 
-## Deploying (Cloudflare Pages)
+## Deploying
+
+Pushing to `main` deploys to <https://macjayz.github.io> through `.github/workflows/pages.yml`, which
+also copies `index.html` to `404.html` so routes like `/about` load on GitHub Pages.
+
+### Cloudflare Pages
 
 Connect this GitHub repo in Cloudflare Pages with build command `npm run build` and output directory
 `dist`. `.node-version` pins Node 22 (Vite needs 20.19+). Routes like `/about` work without extra config.
