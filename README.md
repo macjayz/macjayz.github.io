@@ -16,7 +16,7 @@ npm run build    # outputs dist/
 ## Deploying
 
 Pushing to `main` deploys to <https://macjayz.github.io> through `.github/workflows/pages.yml`, which
-also copies `index.html` to `404.html` so routes like `/about` load on GitHub Pages.
+also copies `index.html` into each route's folder and to `404.html`, since GitHub Pages has no SPA fallback.
 
 ### Cloudflare Pages
 
