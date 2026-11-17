@@ -137,7 +137,7 @@ export default function MyWork() {
                       </div>
                       <div className="elementor-element elementor-element-1998ca7 elementor-widget elementor-widget-heading" data-id="1998ca7" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
                         <h2 className="elementor-heading-title elementor-size-default">
-                          Design inspired by Paula Gola's free Framer template. Rebuilt in React.
+                          Designed and built by Mangai Machen John.
                         </h2>
                       </div>
                     </div>

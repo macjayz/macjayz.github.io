@@ -1,23 +1,45 @@
+import { useState } from 'react';
 import BlurReveal, { RevealText } from '../components/elementor/BlurReveal.jsx';
 import LazyContainer from '../components/elementor/LazyContainer.jsx';
 import { profile } from '../data/profile.js';
 
+// The site is static, so messages go through FormSubmit, which emails them to me.
+const FORM_ENDPOINT = `https://formsubmit.co/ajax/${profile.email}`;
+
 export default function Contact() {
-  // No backend: open the visitor's email app with the message addressed to me.
-  const onSubmit = (event) => {
+  const [status, setStatus] = useState('idle'); // idle | sending | sent | error
+
+  const onSubmit = async (event) => {
     event.preventDefault();
-    const form = new FormData(event.currentTarget);
+    const formElement = event.currentTarget;
+    const form = new FormData(formElement);
     const field = (name) => form.get(`form_fields[${name}]`) || '';
-    const subject = `Project enquiry from ${field('name') || 'your website'}`;
-    const body = [
-      field('field_b812327'),
-      '',
-      `Name: ${field('name')}`,
-      `Email: ${field('email')}`,
-      `Phone: ${field('field_5272083')}`,
-      `Country: ${field('field_0e3efbd')}`,
-    ].join('\n');
-    window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    setStatus('sending');
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: field('name'),
+          email: field('email'),
+          phone: field('field_5272083'),
+          country: field('field_0e3efbd'),
+          message: field('field_b812327'),
+          _subject: `Project enquiry from ${field('name') || 'your website'}`,
+          _replyto: field('email'),
+          _template: 'table',
+          _captcha: 'false',
+          _honey: form.get('_honey') || '',
+        }),
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || String(result.success) !== 'true') throw new Error(result.message || response.statusText);
+      formElement.reset();
+      setStatus('sent');
+    } catch {
+      setStatus('error');
+    }
   };
 
   return (
@@ -68,6 +90,8 @@ export default function Contact() {
                         {" "}
                         <input type="hidden" name="queried_id" defaultValue="74" />
                         {" "}
+                        {/* Spam trap: hidden from people, filled in by bots. */}
+                        <input type="text" name="_honey" tabIndex="-1" autoComplete="off" aria-hidden="true" style={{ display: 'none' }} />
                         <div className="elementor-form-fields-wrapper elementor-labels-above">
                           <div className="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-name elementor-col-50">
                             <label htmlFor="form-field-name" className="elementor-field-label">
@@ -105,14 +129,25 @@ export default function Contact() {
                             <textarea className="elementor-field-textual elementor-field  elementor-size-lg" name="form_fields[field_b812327]" id="form-field-field_b812327" rows="6" placeholder="I need a web app, API or dashboard that…" required />
                           </div>
                           <div className="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100 e-form__buttons">
-                            <button className="elementor-button elementor-size-sm" type="submit">
+                            <button className="elementor-button elementor-size-sm" type="submit" disabled={status === 'sending'}>
                               <span className="elementor-button-content-wrapper">
                                 <span className="elementor-button-text">
-                                  Send message
+                                  {status === 'sending' ? 'Sending…' : 'Send message'}
                                 </span>
                               </span>
                             </button>
                           </div>
+                          {status === 'sent' && (
+                            <p className="contact-form-status" role="status">
+                              Thanks, your message has been sent. I'll reply by email soon.
+                            </p>
+                          )}
+                          {status === 'error' && (
+                            <p className="contact-form-status contact-form-status--error" role="alert">
+                              Sorry, the message could not be sent. Please email me at{' '}
+                              <a href={`mailto:${profile.email}`}>{profile.email}</a>.
+                            </p>
+                          )}
                         </div>
                       </form>
                     </div>
