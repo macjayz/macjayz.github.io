@@ -319,7 +319,7 @@ export default function About() {
               <div className="elementor-element elementor-element-53df7f67 e-con-full e-flex e-con e-child" data-id="53df7f67" data-element_type="container" data-e-type="container">
                 <div className="elementor-element elementor-element-45100f10 elementor-widget elementor-widget-heading" data-id="45100f10" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
                   <h2 className="elementor-heading-title elementor-size-default">
-                    Design inspired by Paula Gola's free Framer template. Rebuilt in React.
+                    Designed and built by Mangai Machen John.
                   </h2>
                 </div>
               </div>

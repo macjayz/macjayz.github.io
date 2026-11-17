@@ -25,3 +25,19 @@
 .elementor-55 .elementor-element.elementor-element-c84cc49 .elementor-image-box-title {
   white-space: nowrap;
 }
+
+/* Contact form result message, under the send button. */
+.contact-form-status {
+  width: 100%;
+  margin: 12px 0 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #d8f5dd;
+}
+.contact-form-status--error {
+  color: #ffd2cc;
+}
+.contact-form-status a {
+  color: inherit;
+  text-decoration: underline;
+}
