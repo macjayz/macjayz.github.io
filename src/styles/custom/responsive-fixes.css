@@ -21,6 +21,19 @@
   }
 }
 
+/* On mobile the header (photo, name and menu button) sits over the top ~225px of
+   each page's hero card, and the hero title is pinned to the card's bottom. With a
+   short card or a title that wraps on a narrow phone, the title ran into the menu
+   button. Reserve the header's space at the top of the card so the title always
+   starts below it; the card grows instead. */
+@media (max-width: 767px) {
+  .elementor-78 .elementor-element.elementor-element-1e352a13,
+  .elementor-59 .elementor-element.elementor-element-7bda5c81,
+  .elementor-74 .elementor-element.elementor-element-46815056 {
+    padding-top: 250px;
+  }
+}
+
 /* Keep the full name on one line in the header. */
 .elementor-55 .elementor-element.elementor-element-c84cc49 .elementor-image-box-title {
   white-space: nowrap;
