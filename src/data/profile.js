@@ -25,6 +25,14 @@ export const projects = [
       'Self-hosted observability for EVM JSON-RPC traffic that catches the failures hiding behind 200 OK: stale chain heads, cross-provider disagreement at the same block height, silent nulls and reorg lag. Its reliability study of 13 public endpoints found that Arbitrum One\'s official RPC dates every eth_getLogs result 1 January 1970 (OffchainLabs/nitro#4780). TypeScript · Fastify · Redis Streams · PostgreSQL · Kubernetes',
   },
   {
+    category: 'web3',
+    title: 'VolatilityShieldHook',
+    image: '/assets/images/projects/volatilityshieldhook.jpg',
+    link: { label: 'GitHub ↗', href: 'https://github.com/macjayz/volatilityshieldhook' },
+    description:
+      'Uniswap V4 hook that sets each swap\'s LP fee from recent price volatility and charges extra for swaps that reverse direction inside one block. Tested with fuzz and invariant suites against a real PoolManager and on an Ethereum mainnet fork, and backtested on 30 days of real ETH/USDC swaps (47,549 swaps, $137.3M). Not audited. Solidity · Foundry · Uniswap V4',
+  },
+  {
     category: 'products',
     title: 'InkKrystal',
     image: '/assets/images/projects/inkkrystal.jpg',
@@ -46,7 +54,7 @@ export const projects = [
     image: '/assets/images/projects/badge-verification.jpg',
     link: { label: 'GitHub ↗', href: 'https://github.com/macjayz/badge-verification' },
     description:
-      'Credentialing system for communities and DAOs with rule-based badge eligibility, SIWE sign-in, Privado ID zero-knowledge identity proofs, X and Discord OAuth, Snapshot vote checks, on-chain soulbound badges and WebSocket-powered dashboards. Node.js · TypeScript · PostgreSQL · Redis · Docker',
+      'Credentialing system for communities and DAOs with rule-based badge eligibility, SIWE sign-in, Privado ID zero-knowledge identity proofs, X and Discord OAuth, Snapshot vote checks, an ERC-5192 soulbound badge contract and WebSocket-powered dashboards. Node.js · TypeScript · PostgreSQL · Redis · Solidity',
   },
   {
     category: 'web3',
